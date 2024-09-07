@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require("express");
 const path = require("path");
 const connectToDb = require("./db_conn");
@@ -8,7 +10,7 @@ const { checkForAuthenticationCookie } = require("./middlewares/authentication")
 const Blog = require("./models/blog");
 
 const app = express();
-const port = 8000;
+const port = process.env.PORT;
 
 connectToDb();
 
